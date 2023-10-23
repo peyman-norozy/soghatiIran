@@ -1,4 +1,76 @@
 const Search: React.FC = () => {
-  return <input type="text" />;
+  return (
+    <form
+      className="
+      relative 
+      lg:w-[442px]
+      w-[350px]
+      2xl:h-[48px]
+      xl:h-[44.8px]
+      lg:h-[41.6px]
+      md:h-[38.4]
+      sm:h-[35.2px]
+      h-[32px]
+      flex
+      "
+    >
+      <input
+        className="
+        w-full
+        h-full 
+        placeholder-primary-gray
+        py-8
+        rounded-lg
+        2xl:px-[24px] 
+        xl:px-[21px]
+        lg:px-[18px]
+        md:px-[15]
+        sm:px-[12px]
+        px-[9px]
+        "
+        type="text"
+        placeholder="جستجو"
+      />
+      <button
+        className=" 
+        absolute 
+        flex 
+        self-center 
+        items-center 
+        w-[125px] 
+        h-32px 
+        bg-primary-pink
+        px-[8px]
+        py-[4px]
+        justify-between
+        rounded-lg
+        2xl:left-[24px] 
+        xl:left-[21px]
+        lg:left-[18px]
+        md:left-[15]
+        sm:left-[12px]
+        left-[9px]
+        text-primary-gary
+        2xl:w-[125px] 
+        xl:w-[116px]
+        lg:w-[107px]
+        md:w-[98]
+        sm:w-[89px]"
+        type="submit"
+      >
+        <i
+          className="soghati-location-o 
+          2xl:text-[23px] 
+          xl:text-[21.2px]
+          lg:text-[19.4px]
+          md:text-[17.6]
+          sm:text-[15.8px]
+          text-[23px]
+        "
+        ></i>
+        <p className="text-[0.875rem]">انتخاب استان</p>
+      </button>
+    </form>
+  );
 };
 export default Search;

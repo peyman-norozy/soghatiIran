@@ -1,21 +1,11 @@
-import { TComponentChildrenProp } from "@/types/general";
-import { responsiveSize } from "@/utils/styleFunctions";
+import { TMenuButtonProps } from "@/types/general";
 
-const MenuLi: React.FC<TComponentChildrenProp> = ({ children }) => {
-  console.log(
-    responsiveSize({ upSize: 16, downSize: 10, styleType: "text-xs" })
-  );
+const MenuLi: React.FC<TMenuButtonProps> = ({ children, text, icon }) => {
   return (
-    <li>
-      <a
-        className="
-          2xl:text-[16px] 
-          xl:text-[14.8px]
-          lg:text-[13.6px]
-          md:text-[12.4]
-          sm:text-[11.2px]
-          "
-      >
+    <li className="">
+      <a className={`flex items-center ${text?.styles}`} href="/">
+        {icon ? <i className={`${icon.name} ${icon.styles}`}></i> : null}
+        <p>{text?.name}</p>
         {children}
       </a>
     </li>

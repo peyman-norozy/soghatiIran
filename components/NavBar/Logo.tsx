@@ -1,7 +1,6 @@
 import { responsiveSize } from "@/utils/styleFunctions";
 
 const Logo: React.FC = () => {
-  console.log(responsiveSize({ upSize: 40, downSize: 8, styleType: "ml" }));
   return (
     <img
       className="  

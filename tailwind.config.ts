@@ -17,6 +17,7 @@ export default {
       spacing: {
         3: "3px",
         4: "4px",
+        5: "5px",
         8: "8px",
         10: "10px",
         12: "12px",

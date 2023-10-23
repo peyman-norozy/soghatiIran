@@ -1,29 +1,37 @@
+import { windowActions } from "@/store/Slices/windowSlice";
 import { TSizeOBJ } from "@/types/general";
 import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
-const useWindowSize = (): TSizeOBJ => {
+export function useWindowSize(): TSizeOBJ {
+  let width = 0;
+  let height = 0;
   const hasWindow = typeof window !== "undefined";
-
-  let size: TSizeOBJ = {
-    width: 0,
-    height: 0,
-    unit: "px",
-  };
-  function getWindowDimensions(): TSizeOBJ {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    return {
-      width,
-      height,
-    };
-  }
+  const dispatch = useDispatch();
   if (hasWindow) {
-    size = getWindowDimensions();
-    window.addEventListener("resize", () => {
-      size = getWindowDimensions();
-    });
+    width = window.innerWidth;
+    height = window.innerHeight;
   }
-  return size;
-};
+  useEffect(() => {
+    dispatch(
+      windowActions.updateSize({
+        height,
+        width,
+      })
+    );
+    window.addEventListener("resize", () => {
+      dispatch(
+        windowActions.updateSize({
+          height: window.innerHeight,
+          width: window.innerWidth,
+        })
+      );
+    });
+  }, []);
+  return {
+    width,
+    height,
+  };
+}
 
 export default useWindowSize;
