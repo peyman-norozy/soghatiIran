@@ -16,7 +16,9 @@ export interface TNameStyle {
 export interface TMenuButtonData {
   text?: TNameStyle;
   icon?: TNameStyle;
+  onClick?: TAnyVoidFunction;
 }
 export interface TMenuButtonProps
   extends TComponentChildrenProp,
     TMenuButtonData {}
+export type TAnyVoidFunction = (...args: any[]) => void;

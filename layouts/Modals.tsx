@@ -13,7 +13,6 @@ const Modals: React.FC = () => {
   });
   const dispatch = useDispatch();
 
-  console.log(show);
   return (
     <>
       <div
@@ -35,9 +34,9 @@ const Modals: React.FC = () => {
           dispatch(ModalActions.showOff());
         }}
       >
-        <MobileMenu show={show} />
+        <MobileMenu show={modalType === "menu"} />
+        <Grouping show={modalType === "grouping"} />
       </div>
-      <Grouping show={true} />
     </>
   );
 };

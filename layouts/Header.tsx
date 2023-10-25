@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 
 const Header: React.FC = () => {
   const webMode = useSelector((state: TStoreState) => state.windowSize.webMode);
-  console.log(webMode);
   return (
     <header
       className="

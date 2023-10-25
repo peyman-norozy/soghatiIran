@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Logo from "./Logo";
 import NavContainer from "./NavContainer";
 import { useDispatch } from "react-redux";
@@ -20,7 +19,9 @@ const NavSmallScreen: React.FC = () => {
         <button
           className="flex items-center"
           onClick={() => {
-            dispatch(ModalActions.showOn({ modalType: modalTypes.menu }));
+            dispatch(
+              ModalActions.showOn({ modalType: modalTypes.menu, show: true })
+            );
           }}
         >
           <i className="soghati-menu-hamburger-o sm:text-[40px] text-[25px]"></i>

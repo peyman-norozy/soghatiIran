@@ -1,4 +1,7 @@
 import { TMenuButtonData, TNameStyle, TStrings } from "@/types/general";
+import { addDispatchProp } from "@/utils/generalFunctions";
+import { actions } from "./actions";
+import { ModalActions } from "@/store/Slices/ModalsSlice";
 
 export const menuTexts: TMenuButtonData[] = [
   {
@@ -9,6 +12,7 @@ export const menuTexts: TMenuButtonData[] = [
       name: "soghati-menu-hamburger-o",
       styles: "font-bold ml-4",
     },
+    onClick: addDispatchProp(ModalActions.showOn(actions.grouping)),
   },
   {
     text: {
@@ -41,6 +45,7 @@ export const menuTexts: TMenuButtonData[] = [
     },
   },
 ];
+
 export const mobileMenuTexts: TMenuButtonData[] = [
   {
     text: {
@@ -51,6 +56,7 @@ export const mobileMenuTexts: TMenuButtonData[] = [
       name: "soghati-menu-hamburger-o",
       styles: "font-bold ml-4",
     },
+    onClick: addDispatchProp(ModalActions.showOn(actions.grouping)),
   },
   {
     text: {
@@ -113,3 +119,43 @@ export const modalTypes: TStrings = {
   menu: "menu",
   group: "group",
 };
+// home icon doesn't exist on public must be fixed
+export const botMenuIcons: TNameStyle[] = [
+  {
+    name: "home",
+    styles: "soghati-Home-4",
+  },
+  {
+    name: "grouping",
+    styles: "soghati-menu-hamburger-o",
+  },
+  {
+    name: "search",
+    styles: "soghati-search-2-o",
+  },
+  {
+    name: "addAd",
+    styles: "soghati-add-o",
+  },
+  {
+    name: "profile",
+    styles: "soghati-profile",
+  },
+];
+
+export const botMenuCard = [
+  {
+    img: "./assets/images/footerLogo.svg",
+    text: "        بزرگترین سامانه کارآفرینی و ایجاد اشتغال جوانان و دانشجویان ایران در فضای مجازی و واقعی ایران، در زمینه تبلیغات، خرید و فروش،",
+  },
+  {
+    img: "./assets/images/footerLogo.svg",
+    text: "        بزرگترین سامانه کارآفرینی و ایجاد اشتغال جوانان و دانشجویان ایران در فضای مجازی و واقعی ایران، در زمینه تبلیغات، خرید و فروش،",
+  },
+];
+export const botMenuLogoes: string[] = [
+  "./assets/images/footerLogo (1).svg",
+  "./assets/images/footerLogo (2).svg",
+  "./assets/images/footerLogo (1).svg",
+  "./assets/images/footerLogo (2).svg",
+];

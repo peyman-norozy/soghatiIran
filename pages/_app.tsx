@@ -5,8 +5,9 @@ import store from "@/store/store";
 import Setup from "@/components/Setup/Setup";
 import Main from "@/layouts/Main";
 import Header from "@/layouts/Header";
-import { useState } from "react";
 import Modals from "@/layouts/Modals";
+import BotMenu from "@/components/NavBar/BotMenu";
+import Footer from "@/layouts/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -20,6 +21,8 @@ export default function App({ Component, pageProps }: AppProps) {
       <Main>
         <Component {...pageProps} />;
       </Main>
+      <BotMenu />
+      <Footer />
     </Provider>
   );
 }

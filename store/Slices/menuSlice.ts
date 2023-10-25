@@ -1,18 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
+export type TBotMenu = "home" | "grouping" | "search" | "addAd" | "profile";
+
 const menuSlice = createSlice({
   name: "menu",
   initialState: {
-    // title: "Home",
-    // option: "Welcome",
-  } as { title: string; option: string },
+    botMenu: "home",
+  } as {
+    botMenu: TBotMenu;
+    option: string;
+  },
   reducers: {
-    moveMenuTitle(state, action) {},
-    moveMenuOption(state, action) {
-      state.option = action.payload.option;
-    },
-    moveMenuTitleAndOption(state, action) {
-      state.title = action.payload.title;
-      state.option = action.payload.option;
+    moveBotMenu(state, action) {
+      state.botMenu = action.payload.botMenu;
     },
   },
 });
